@@ -21,8 +21,9 @@
                 <tr>
                 <th>{{ $servico->id }}</th>
                 <td>{{ $servico->nome }}</td>
-                   <td> <a href="http://"{{ route('servicos.edit', $servico) }}" class= "btn btn-primary">Atualizar</a>
-               </td>
+                   <td>
+                       <a href="{{ route('servicos.edit', $servico) }}" class= "btn btn-primary">Atualizar</a>
+                  </td>
             </tr>
         @empty
            <tr></tr>
