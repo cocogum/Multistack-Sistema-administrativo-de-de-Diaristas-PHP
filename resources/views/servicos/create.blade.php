@@ -11,8 +11,8 @@
 @include('_mensagens')
 
     <form action="{{ route('servicos.store') }}" method="post">
-        @method('PUT')
 
       @include('servicos._form')
     </form>
 @stop
+

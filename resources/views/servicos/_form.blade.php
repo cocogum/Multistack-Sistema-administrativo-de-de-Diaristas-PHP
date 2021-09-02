@@ -16,9 +16,9 @@
                                 <label for="icone">Ícone</label>
                                 <select name="icone" id="icone" type "input" required class="form-control">
                                     <option value="">Selecione um ícone</option>
-                                    <option value="twf-cleaning-1" {{ old('icone', isset($servico) && $servico->icone) === 'twf-cleaning-1' ? 'selected' : ' ' }}>ícone 1</option>
-                                    <option value="twf-cleaning-2" {{ old('icone', isset($servico) && $servico->icone) === 'twf-cleaning-2' ? 'selected' : ' ' }}>ícone 2</option>
-                                    <option value="twf-cleaning-3" {{ old('icone', isset($servico) && $servico->icone) === 'twf-cleaning-3' ? 'selected' : ' ' }}>ícone 3</option>
+                                    <option value="twf-cleaning-1" {{ old('icone', $servico->icone ?? '') === 'twf-cleaning-1' ? 'selected' : ' ' }}>ícone 1</option>
+                                    <option value="twf-cleaning-2" {{ old('icone', $servico->icone ?? '') === 'twf-cleaning-2' ? 'selected' : ' ' }}>ícone 2</option>
+                                    <option value="twf-cleaning-3" {{ old('icone', $servico->icone ?? '') === 'twf-cleaning-3' ? 'selected' : ' ' }}>ícone 3</option>
                                 </select>
                             </div>
                         </div>
@@ -142,7 +142,7 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="horas_outros">Quantidade de horas por outros tipos de cômodos</label>
-                                <input value="{{ old('horas_outros', $servico->horas_outros ?? '')}}" type "input" required class="form-control" name="horas_outros" id="horas_outros" data-mask="0" placeholder="Quantidade horas por outros">
+                                <input value="{{ old('horas_outros', $servico->horas_outros ?? '')}}" type "input" required class="form-control" name="horas_outros" id="horas_outros" placeholder="Quantidade horas por outros">
                             </div>
                         </div>
                     </div>
