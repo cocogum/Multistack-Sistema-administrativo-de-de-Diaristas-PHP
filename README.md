@@ -39,3 +39,8 @@ php artisan migrate
 php artisan serve
 ```
 
+####Criar usuario admin
+```
+usuario criado admin admin@cocogum.org
+senha 031954+gum
+```

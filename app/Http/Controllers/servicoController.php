@@ -33,7 +33,7 @@ class servicoController extends Controller
             return view('servicos.create');
         }
         /**
-         * Undocumented function
+         * Cria um novo registro no banco de dados
          *
          * @param ServicoRiquest $riquest
          * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
@@ -56,24 +56,20 @@ class servicoController extends Controller
          * @param integer $id
          * @return \Illuminate\Contracts\View\View|\Illuminate\Contracts\View\Factory
          */
-              public function edit(int $id)
+              public function edit(servico $servico)
            {
-               $servico = servico::findOrFail($id);
-
-               return view('servicos.edit')->with('servico', $servico);
+              return view('servicos.edit')->with('servico', $servico);
            }
            /**
-            * Undocumented function
+            * Atualiza um registyro no banco de dados
             *
             * @param integer $id
             * @param ServicoRiquest $request
             * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
             */
-public function update(int $id, ServicoRiquest $request)
+public function update(servico $servico, ServicoRiquest $request)
 {
     $dados = $request->except(['_token','_method']);
-
-    $servico = servico::findOrFail($id);
 
     $servico->update($dados);
 

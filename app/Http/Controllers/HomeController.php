@@ -9,7 +9,7 @@ class HomeController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * @return \Illuminate\Routing\ControllerMiddlewareOptions
      */
     public function __construct()
     {

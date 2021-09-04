@@ -173,7 +173,7 @@ return [
     'right_sidebar_slide' => true,
     'right_sidebar_push' => true,
     'right_sidebar_scrollbar_theme' => 'os-theme-light',
-    'right_sidebar_scrollbar_auto_hide' => 'l',
+    'right_sidebar_scrollbar_auto_hide' => '1',
 
     /*
     |--------------------------------------------------------------------------
@@ -225,10 +225,7 @@ return [
     */
 
     'menu' => [
-        // Navbar items:
-
         // Sidebar items:
-
         [
             'text'    => 'Cadastro de Serviços',
             'icon'    => 'fas fa-fw fa-broom',
@@ -240,13 +237,27 @@ return [
                 ],
                 [
                     'text'    => 'Novo Serviço',
-                    'route'     => 'servicos.create',
+                    'route'   => 'servicos.create',
                     'icon'    => 'fas fa-fw fa-file',
-
                 ],
-                ],
+            ],
         ],
-
+        [
+            'text'    => 'Cadastro de Usuarios',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text'   => 'listar Usuarios',
+                    'route'  => 'usuarios.index',
+                    'icon'   => 'fas fa-fw fa-list',
+                ],
+                [
+                    'text'    => 'Novo Usuario',
+                    'route'   => 'usuarios.create',
+                    'icon'    => 'fas fa-fw fa-file',
+                ],
+            ],
+        ],
     ],
 
     /*
@@ -284,16 +295,16 @@ return [
     */
 
     'plugins' => [
-        'jaquryMask' => [
+        'JqueryMask' => [
             'active' => true,
             'files' => [
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js',
-                ]
-            ]
-       ],
+                    'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
+                ],
+            ],
+        ],
         'Datatables' => [
             'active' => false,
             'files' => [
@@ -368,6 +379,39 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | IFrame
+    |--------------------------------------------------------------------------
+    |
+    | Here we change the IFrame mode configuration. Note these changes will
+    | only apply to the view that extends and enable the IFrame mode.
+    |
+    | For detailed instructions you can look the iframe mode section here:
+    | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/IFrame-Mode-Configuration
+    |
+    */
+
+    'iframe' => [
+        'default_tab' => [
+            'url' => null,
+            'title' => null,
+        ],
+        'buttons' => [
+            'close' => true,
+            'close_all' => true,
+            'close_all_other' => true,
+            'scroll_left' => true,
+            'scroll_right' => true,
+            'fullscreen' => true,
+        ],
+        'options' => [
+            'loading_screen' => 1000,
+            'auto_show_new_tab' => true,
+            'use_navbar_items' => true,
+        ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | Livewire
     |--------------------------------------------------------------------------
     |
@@ -375,6 +419,7 @@ return [
     |
     | For detailed instructions you can look the livewire here:
     | https://github.com/jeroennoten/Laravel-AdminLTE/wiki/Other-Configuration
+    |
     */
 
     'livewire' => false,
